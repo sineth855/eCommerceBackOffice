@@ -1,0 +1,3 @@
+database: bakou_db
+username: bakou
+password: Ibs@dmin123**

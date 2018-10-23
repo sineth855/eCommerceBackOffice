@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_unicode_ci">bokordb</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="sg_reseller" view="colnames">
+<left>0</left>
+<top>0</top>
+<width>187</width>
+<height>497</height>
+<sql_create_table>CREATE TABLE `sg_reseller` (
+  `reseller_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `store_id` int(10) NOT NULL,
+  `sec_user_id` int(10) NOT NULL,
+  `firstname` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `store_name` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` char(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `company` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address_1` text COLLATE utf8mb4_unicode_ci,
+  `address_2` text COLLATE utf8mb4_unicode_ci,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone_1` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telephone_2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `province` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint(1) DEFAULT '0',
+  `date_added` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`reseller_id`,`store_id`,`sec_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci</sql_create_table>
+</table>
+<table name="sg_store" view="colnames">
+<left>196</left>
+<top>0</top>
+<width>106</width>
+<height>182</height>
+<sql_create_table>CREATE TABLE `sg_store` (
+  `store_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `ssl` varchar(255) NOT NULL,
+  `is_default` int(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`store_id`,`name`,`url`,`is_default`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="sg_setting" view="colnames">
+<left>196</left>
+<top>196</top>
+<width>106</width>
+<height>185</height>
+<sql_create_table>CREATE TABLE `sg_setting` (
+  `setting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL DEFAULT '0',
+  `code` varchar(128) NOT NULL,
+  `key` varchar(128) NOT NULL,
+  `value` text NOT NULL,
+  `serialized` tinyint(1) NOT NULL,
+  PRIMARY KEY (`setting_id`,`store_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=254 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="sg_carrier" view="colnames">
+<left>581</left>
+<top>34</top>
+<width>181</width>
+<height>463</height>
+<sql_create_table>CREATE TABLE `sg_carrier` (
+  `carrier_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `reference_id` int(10) unsigned DEFAULT '0',
+  `tax_rule_id` int(10) unsigned DEFAULT '0',
+  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shipping_handling` tinyint(1) unsigned DEFAULT '1',
+  `range_behavior` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `delay` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Mean when will carrier pickup',
+  `is_module` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `is_free` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `shipping_external` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `need_range` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `external_module_name` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `shipping_method` int(2) NOT NULL DEFAULT '0',
+  `position` int(10) unsigned NOT NULL DEFAULT '0',
+  `max_width` int(10) DEFAULT '0',
+  `max_height` int(10) DEFAULT '0',
+  `max_depth` int(10) DEFAULT '0',
+  `max_weight` decimal(20,6) DEFAULT '0.000000',
+  `grade` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`carrier_id`),
+  KEY `deleted` (`deleted`,`active`),
+  KEY `id_tax_rules_group` (`tax_rule_id`),
+  KEY `reference` (`reference_id`,`deleted`,`active`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="sg_carrier_zone" view="colnames">
+<left>777</left>
+<top>45</top>
+<width>120</width>
+<height>111</height>
+<sql_create_table>CREATE TABLE `sg_carrier_zone` (
+  `carrier_id` int(10) unsigned NOT NULL,
+  `zone_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`carrier_id`,`zone_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="sg_zone" view="colnames">
+<left>908</left>
+<top>45</top>
+<width>106</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `sg_zone` (
+  `zone_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country_id` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `code` varchar(32) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`zone_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4239 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="sg_carrier_to_store" view="colnames">
+<left>769</left>
+<top>313</top>
+<width>144</width>
+<height>114</height>
+<sql_create_table>CREATE TABLE `sg_carrier_to_store` (
+  `carrier_id` int(11) unsigned NOT NULL,
+  `store_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`carrier_id`,`store_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="sg_range_price" view="colnames">
+<left>776</left>
+<top>161</top>
+<width>129</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `sg_range_price` (
+  `range_price_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `carrier_id` int(10) unsigned NOT NULL,
+  `delimiter1` decimal(20,6) NOT NULL,
+  `delimiter2` decimal(20,6) NOT NULL,
+  PRIMARY KEY (`range_price_id`,`carrier_id`,`delimiter1`,`delimiter2`),
+  UNIQUE KEY `carrier_id` (`carrier_id`,`delimiter1`,`delimiter2`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="sg_users" view="colnames">
+<left>302</left>
+<top>190</top>
+<width>145</width>
+<height>311</height>
+<sql_create_table>CREATE TABLE `sg_users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_group_id` int(5) NOT NULL,
+  `firstname` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` char(5) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `company` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address_1` text COLLATE utf8mb4_unicode_ci,
+  `address_2` text COLLATE utf8mb4_unicode_ci,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telephone_1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone_2` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `province` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` longtext COLLATE utf8mb4_unicode_ci,
+  `status` tinyint(1) DEFAULT '0',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_added` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

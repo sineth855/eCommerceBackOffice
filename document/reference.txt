@@ -1,0 +1,5 @@
+##validation error
+https://stackoverflow.com/questions/50449087/vee-validate-in-dynamic-element
+## Grant permission folder
+chmod -R 777 /var/www/html/bakouFrontStore
+## Check dynamic https://jsfiddle.net/npe92746/2/
