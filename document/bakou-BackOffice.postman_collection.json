@@ -1,0 +1,3591 @@
+{
+	"info": {
+		"_postman_id": "b754b003-6a40-4da8-9012-39f70e5ed0c5",
+		"name": "BBBKKK-BackOffice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "DeviceID",
+								"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "DeviceID",
+								"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\":\"sineth\",\n  \"last_name\":\"sim\",\n  \"email\":\"muylssssyss@gmail.com\",\n  \"password\":\"123456\",\n  \"confirm_password\":\"123456\",\n  \"deviceId\":\"12222\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/account/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http:localhost:3000/api/account/register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "DeviceID",
+										"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"first_name\":\"sineth\",\n  \"last_name\":\"sim\",\n  \"email\":\"muyly@gmail.com\",\n  \"password\":\"123456\",\n  \"confirm_password\":\"123456\",\n  \"deviceId\":\"18:00\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/account/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"account",
+										"register"
+									]
+								}
+							},
+							"status": "unknown status",
+							"code": 419,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Feb 2018 23:48:35 +0700",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "Host",
+									"value": "localhost:3000",
+									"name": "Host",
+									"description": ""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6ImxueUJVWEdFNEtvcGxKUkptWVwvaWp3PT0iLCJ2YWx1ZSI6IkpGdUJXQm82YmdZMkMwRzRwNVhZdFR5MnRXSGF1eUgrcjZnRk4ra0RTcFpHK284ZnR3MmcyNjNiSzB2dmJSZ1hkdGdvUUxtQWt1aTZpOXZ2RlhXRUZBPT0iLCJtYWMiOiIwMmQ0OGE0YTAyNTg1YzJhYmYxMmFmYWRjZmUwYmIxNjc3YTRhM2RmZjcxMGI3OWQ0NWEzYjk1NmMwYWIxODhkIn0%3D; expires=Sun, 25-Feb-2018 18:48:35 GMT; Max-Age=7200; path=/; HttpOnly",
+									"name": "Set-Cookie",
+									"description": ""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.9",
+									"name": "X-Powered-By",
+									"description": ""
+								},
+								{
+									"key": "date",
+									"value": "Sun, 25 Feb 2018 16:48:35 GMT",
+									"name": "date",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Wed Feb 20 2019 20:37:50 GMT+0700 (SE Asia Standard Time)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "English",
+									"key": "Language"
+								},
+								{
+									"expires": "Mon Feb 26 2018 01:48:35 GMT+0700 (SE Asia Standard Time)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "eyJpdiI6ImxueUJVWEdFNEtvcGxKUkptWVwvaWp3PT0iLCJ2YWx1ZSI6IkpGdUJXQm82YmdZMkMwRzRwNVhZdFR5MnRXSGF1eUgrcjZnRk4ra0RTcFpHK284ZnR3MmcyNjNiSzB2dmJSZ1hkdGdvUUxtQWt1aTZpOXZ2RlhXRUZBPT0iLCJtYWMiOiIwMmQ0OGE0YTAyNTg1YzJhYmYxMmFmYWRjZmUwYmIxNjc3YTRhM2RmZjcxMGI3OWQ0NWEzYjk1NmMwYWIxODhkIn0%3D",
+									"key": "laravel_session"
+								},
+								{
+									"expires": "Mon Feb 26 2018 01:23:20 GMT+0700 (SE Asia Standard Time)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "eyJpdiI6IkFjeUdrRE5MTEFIaG9PSVlicXN3eFE9PSIsInZhbHVlIjoia0J5c3dcL0ZTNFwvcHpnYm9IVnBMNXd0OUU0ZkhDOUxcL2dSZXl4SjZQSXlRYTZOOU40dWk1RG9qXC84cFZQbThheHhZejJzazQrenFvRXVteHorQWp1c0ZBPT0iLCJtYWMiOiIwZTQ2N2Q0NjAxZTY5NjljYzQwM2Q5NTAzMWNiYmFiZjUxNjRkNjIxNTU1ZmFkYzVjMzdmYjFmY2E3ZGE1MDk5In0%3D",
+									"key": "XSRF-TOKEN"
+								}
+							],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Page Expired</title>\n\n        <!-- Fonts -->\n        <link href=\"https://fonts.googleapis.com/css?family=Raleway:100,600\" rel=\"stylesheet\" type=\"text/css\">\n\n        <!-- Styles -->\n        <style>\n            html, body {\n                background-color: #fff;\n                color: #636b6f;\n                font-family: 'Raleway', sans-serif;\n                font-weight: 100;\n                height: 100vh;\n                margin: 0;\n            }\n\n            .full-height {\n                height: 100vh;\n            }\n\n            .flex-center {\n                align-items: center;\n                display: flex;\n                justify-content: center;\n            }\n\n            .position-ref {\n                position: relative;\n            }\n\n            .content {\n                text-align: center;\n            }\n\n            .title {\n                font-size: 36px;\n                padding: 20px;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"flex-center position-ref full-height\">\n            <div class=\"content\">\n                <div class=\"title\">\n                        The page has expired due to inactivity.\n    <br/><br/>\n    Please refresh and try again.\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b9de2c5b-38dd-48ad-8681-2cef40ed1c31",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6944d5ea-9cea-4e88-9d4f-060dfb15eb86",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDAyMSwiZXhwIjoxNTM3NjkzNjIxLCJuYmYiOjE1Mzc2OTAwMjEsImp0aSI6IjFoRlltazNCUzNoZGZEV2YiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.xb1In0XQuhxjDZXJDc-NKZx8jByiws2ZMzFyRDEjajU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user_group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDAyMSwiZXhwIjoxNTM3NjkzNjIxLCJuYmYiOjE1Mzc2OTAwMjEsImp0aSI6IjFoRlltazNCUzNoZGZEV2YiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.xb1In0XQuhxjDZXJDc-NKZx8jByiws2ZMzFyRDEjajU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user_role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user_role"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Get Supplier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8zNS4xODUuMTkxLjExOjgwODFcL2FwaVwvbG9naW4iLCJpYXQiOjE1MzgzODY5NTUsImV4cCI6MTUzODM5MDU1NSwibmJmIjoxNTM4Mzg2OTU1LCJqdGkiOiJ6SmF0T3dKY1VsbEUySE5vIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.KE78bMEBE_MPPLKF98s2So2Z-95G54jrN-WtTsHHjX8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/supplier",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "Get Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODEyNDQwMiwiZXhwIjoxNTM4MTI4MDAyLCJuYmYiOjE1MzgxMjQ0MDIsImp0aSI6IlQ1Y25wQ3p6bmtZalpWNVYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.eFqBwhHIYOrygQJob8vs12zJi6XjA7ocUIC_Uu_Y4cg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/informations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"informations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Information",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODEzMjc1NCwiZXhwIjoxNTM4MTM2MzU0LCJuYmYiOjE1MzgxMzI3NTQsImp0aSI6ImlFNzYzdWhQZ01yV0FyWkQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.AZxt5pujP_rrTn0i-xri1obu28oDr6dKcvB0UDhGRSo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/informations/3/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"informations",
+								"3",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reseller",
+			"item": [
+				{
+					"name": "Get Resellers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzcwMzgwOSwiZXhwIjoxNTM3NzA3NDA5LCJuYmYiOjE1Mzc3MDM4MDksImp0aSI6IjZKclpFZWc4Zk9QNXVFOTAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RV3fn0Slcgvyy-WwnglFTzbf_TrM4b4MW2y7FkYaUCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/sale_order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sale_order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale Order",
+			"item": [
+				{
+					"name": "Sale Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzcwMzgwOSwiZXhwIjoxNTM3NzA3NDA5LCJuYmYiOjE1Mzc3MDM4MDksImp0aSI6IjZKclpFZWc4Zk9QNXVFOTAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RV3fn0Slcgvyy-WwnglFTzbf_TrM4b4MW2y7FkYaUCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/sale_order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sale_order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carriers",
+			"item": [
+				{
+					"name": "Get Carriers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8zNS4xODUuMTkxLjExOjgwODFcL2FwaVwvbG9naW4iLCJpYXQiOjE1MzgzOTAxNjEsImV4cCI6MTUzODM5Mzc2MSwibmJmIjoxNTM4MzkwMTYxLCJqdGkiOiJncnhUeXgyQTZQZHZicDZyIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qgwYHNeSa8jUNQULzWT6uAcvLhsTPzFMvLKjLFxJews",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/carriers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"carriers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Carriers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODA1MDE2OSwiZXhwIjoxNTM4MDUzNzY5LCJuYmYiOjE1MzgwNTAxNjksImp0aSI6IngxN1RkMnVMMGxLQnBvMnkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.LtwLzXeI_xSGqIQUUE43o056IJJvVCZlNnbLiSfXtno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/carriers/21/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"carriers",
+								"21",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Get Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODA2MDQ0MiwiZXhwIjoxNTM4MDY0MDQyLCJuYmYiOjE1MzgwNjA0NDIsImp0aSI6InFzcE81YlhHU1JtOXd3emwiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.R55FPqwsaU9v9QHJikF3Ww0pdS_XPkRf3KEdS9qmqk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODA2NTk1MywiZXhwIjoxNTM4MDY5NTUzLCJuYmYiOjE1MzgwNjU5NTMsImp0aSI6Ilh4QUxlRzQzUzlaem50R2giLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.q7AtyLDQesY_YZIEh-Vrp2JZHkN9cwz-cNP8NgQOLI8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/store/1/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"store",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Get Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODExNTA1MiwiZXhwIjoxNTM4MTE4NjUyLCJuYmYiOjE1MzgxMTUwNTIsImp0aSI6IlAxdlRDWHM5MlBFeDR5OVoiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.pJ-l56NUPqIT0wszflUGkPc68MEgId8Q_2YRfjGao0w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODA2NTk1MywiZXhwIjoxNTM4MDY5NTUzLCJuYmYiOjE1MzgwNjU5NTMsImp0aSI6Ilh4QUxlRzQzUzlaem50R2giLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.q7AtyLDQesY_YZIEh-Vrp2JZHkN9cwz-cNP8NgQOLI8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/store/1/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"store",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ4MTU4OCwiZXhwIjoxNTM4NDg1MTg4LCJuYmYiOjE1Mzg0ODE1ODgsImp0aSI6IkFlZUQxTTFmczJXeFl4T3IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.UOSp_vYlj5hHoV1f18L7KvlVSFBWi6wP4CJiSxqRsUY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5NzI5MiwiZXhwIjoxNTM4NTAwODkyLCJuYmYiOjE1Mzg0OTcyOTIsImp0aSI6IkFBNlo1ZlBET1FaMTFlWFAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.HScrmpEHD_O0b7lsP0EoABq1LQsOb3HueSQVY2Zj4JA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/products/12/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"12",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Option Product",
+			"item": [
+				{
+					"name": "Get Option",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODIxMDUxMSwiZXhwIjoxNTM4MjE0MTExLCJuYmYiOjE1MzgyMTA1MTEsImp0aSI6IkJFYUpnMnFGQU9YUzE4ZUUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.1sQGp5iw5Z5ysuHa72i9_iw-zhlVi-C238B72t-byjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/options",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Options",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODA1MDE2OSwiZXhwIjoxNTM4MDUzNzY5LCJuYmYiOjE1MzgwNTAxNjksImp0aSI6IngxN1RkMnVMMGxLQnBvMnkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.LtwLzXeI_xSGqIQUUE43o056IJJvVCZlNnbLiSfXtno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzY5MDU3OSwiZXhwIjoxNTM3Njk0MTc5LCJuYmYiOjE1Mzc2OTA1NzksImp0aSI6InIzVGpPMDlxWUtHeXZDVzkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.V1YbwmPidKFMeIiRXiOqqpnY1YftO-PQEQ78O3jNFGM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/options/21/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"options",
+								"21",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzQzMzI1MCwiZXhwIjoxNTM3NDM2ODUwLCJuYmYiOjE1Mzc0MzMyNTAsImp0aSI6ImFTaHhhb1lkSmlqaTVNT1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3lspt2Y-nLbPkJV-k5SyVkEYqmLJ-eFZasUca3upwZ8"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/customers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzQzMzI1MCwiZXhwIjoxNTM3NDM2ODUwLCJuYmYiOjE1Mzc0MzMyNTAsImp0aSI6ImFTaHhhb1lkSmlqaTVNT1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3lspt2Y-nLbPkJV-k5SyVkEYqmLJ-eFZasUca3upwZ8"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/customers/2/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"customers",
+								"2",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Stock Status",
+					"item": [
+						{
+							"name": "Get Stock Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAwNTE0NSwiZXhwIjoxNTM3MDA4NzQ1LCJuYmYiOjE1MzcwMDUxNDUsImp0aSI6InpmdnZrRnpGNWt5em5IQkEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BoZDNMbaUzc5r1sCRMeugrEYQlq_GI_K9hs8bs0eKZ0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/stock_status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"stock_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Stock Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/stock_status/7/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"stock_status",
+										"7",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Length Class",
+					"item": [
+						{
+							"name": "Get Length Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MjI5NCwiZXhwIjoxNTM4NDk1ODk0LCJuYmYiOjE1Mzg0OTIyOTQsImp0aSI6InJlSEtINkt2elVESFFGY3IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.8tfGy-UlMQrK2Xi3afS0BmFirdKIuI2sFo2DTMbptEg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAwNTE0NSwiZXhwIjoxNTM3MDA4NzQ1LCJuYmYiOjE1MzcwMDUxNDUsImp0aSI6InpmdnZrRnpGNWt5em5IQkEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BoZDNMbaUzc5r1sCRMeugrEYQlq_GI_K9hs8bs0eKZ0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/length_class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"length_class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Length Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MDk4MCwiZXhwIjoxNTM4NDk0NTgwLCJuYmYiOjE1Mzg0OTA5ODAsImp0aSI6InhOdGpMOXh1SHdVcVRXUDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.utdZVxro-KTsZdYqHLmuvXeQaCgahtnXVFD0R0Svelk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/length_class/2/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"length_class",
+										"2",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "907e4c6f-afb2-4436-93a8-92b3fe350a9b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "eed2d90d-668f-4ada-abd5-85017c6d0888",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Weight Class",
+					"item": [
+						{
+							"name": "Get Weight Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MDk4MCwiZXhwIjoxNTM4NDk0NTgwLCJuYmYiOjE1Mzg0OTA5ODAsImp0aSI6InhOdGpMOXh1SHdVcVRXUDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.utdZVxro-KTsZdYqHLmuvXeQaCgahtnXVFD0R0Svelk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAwNTE0NSwiZXhwIjoxNTM3MDA4NzQ1LCJuYmYiOjE1MzcwMDUxNDUsImp0aSI6InpmdnZrRnpGNWt5em5IQkEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BoZDNMbaUzc5r1sCRMeugrEYQlq_GI_K9hs8bs0eKZ0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/weight_class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"weight_class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Weight Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MDk4MCwiZXhwIjoxNTM4NDk0NTgwLCJuYmYiOjE1Mzg0OTA5ODAsImp0aSI6InhOdGpMOXh1SHdVcVRXUDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.utdZVxro-KTsZdYqHLmuvXeQaCgahtnXVFD0R0Svelk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/weight_class/2/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"weight_class",
+										"2",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "907e4c6f-afb2-4436-93a8-92b3fe350a9b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "eed2d90d-668f-4ada-abd5-85017c6d0888",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tax Class",
+					"item": [
+						{
+							"name": "Get Tax Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MDk4MCwiZXhwIjoxNTM4NDk0NTgwLCJuYmYiOjE1Mzg0OTA5ODAsImp0aSI6InhOdGpMOXh1SHdVcVRXUDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.utdZVxro-KTsZdYqHLmuvXeQaCgahtnXVFD0R0Svelk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAwNTE0NSwiZXhwIjoxNTM3MDA4NzQ1LCJuYmYiOjE1MzcwMDUxNDUsImp0aSI6InpmdnZrRnpGNWt5em5IQkEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BoZDNMbaUzc5r1sCRMeugrEYQlq_GI_K9hs8bs0eKZ0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Tax Class",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODQ5MjI5NCwiZXhwIjoxNTM4NDk1ODk0LCJuYmYiOjE1Mzg0OTIyOTQsImp0aSI6InJlSEtINkt2elVESFFGY3IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.8tfGy-UlMQrK2Xi3afS0BmFirdKIuI2sFo2DTMbptEg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNjk5NTUwNywiZXhwIjoxNTM2OTk5MTA3LCJuYmYiOjE1MzY5OTU1MDcsImp0aSI6IjVOcFo1aWxYTGJkVXZkelMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.gLK48SJ1MrPgQDSYVGO5oMuraqU6w_N2dPSspiYkupo"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_class/2/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_class",
+										"2",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "907e4c6f-afb2-4436-93a8-92b3fe350a9b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "eed2d90d-668f-4ada-abd5-85017c6d0888",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Category Type",
+					"item": [
+						{
+							"name": "Get Category Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNzQzMCwiZXhwIjoxNTM3MDMxMDMwLCJuYmYiOjE1MzcwMjc0MzAsImp0aSI6Ik14OGxoeXNGUGZ4WXhkYjYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.uJ_9JZF1x-bph3iRmgxH6p37f7Mz3SVJB0Zif-Wv3ZA"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/category_type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"category_type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Category Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNDc2OCwiZXhwIjoxNTM3MDI4MzY4LCJuYmYiOjE1MzcwMjQ3NjgsImp0aSI6Ik5XdW4wSjM5TG1tVDRvYkYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.r6tBTyOBcy874qP88_W3wmCGkKn5n1C3_tg85kvOH9w"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/category_type/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"category_type",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Get Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODU4NTg5OSwiZXhwIjoxNTM4NTg5NDk5LCJuYmYiOjE1Mzg1ODU4OTksImp0aSI6IlQzYmpUQ2RhQWtYWWVWbjQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.NzVIDoGI8gxDt9tehoRVj5Z0eHoUf6fAwKkyn-gpB-A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNzQzMCwiZXhwIjoxNTM3MDMxMDMwLCJuYmYiOjE1MzcwMjc0MzAsImp0aSI6Ik14OGxoeXNGUGZ4WXhkYjYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.uJ_9JZF1x-bph3iRmgxH6p37f7Mz3SVJB0Zif-Wv3ZA"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzODU4NTg5OSwiZXhwIjoxNTM4NTg5NDk5LCJuYmYiOjE1Mzg1ODU4OTksImp0aSI6IlQzYmpUQ2RhQWtYWWVWbjQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.NzVIDoGI8gxDt9tehoRVj5Z0eHoUf6fAwKkyn-gpB-A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNDc2OCwiZXhwIjoxNTM3MDI4MzY4LCJuYmYiOjE1MzcwMjQ3NjgsImp0aSI6Ik5XdW4wSjM5TG1tVDRvYkYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.r6tBTyOBcy874qP88_W3wmCGkKn5n1C3_tg85kvOH9w"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/category/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"category",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Attribute",
+					"item": [
+						{
+							"name": "Get Attribute",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyMTMxMywiZXhwIjoxNTM3MDI0OTEzLCJuYmYiOjE1MzcwMjEzMTMsImp0aSI6Inhpd01Obk5NNmM0djFCb28iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Dtuw4_ZJXaPOVcHQ5Lgja0bjdezm8gRKKxKJrnvvvPY"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/attribute",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"attribute"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Attribute",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNTczNCwiZXhwIjoxNTM3MDI5MzM0LCJuYmYiOjE1MzcwMjU3MzQsImp0aSI6IjZiWnQ4YlpIb0lFaFNmQmkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.k1Z2QrPQs9_7rY9Lj7d4ilN-3nN383VCnLb2OWjx9xE"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/attribute/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"attribute",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Attribute Group",
+					"item": [
+						{
+							"name": "Get Attribute Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNDc2OCwiZXhwIjoxNTM3MDI4MzY4LCJuYmYiOjE1MzcwMjQ3NjgsImp0aSI6Ik5XdW4wSjM5TG1tVDRvYkYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.r6tBTyOBcy874qP88_W3wmCGkKn5n1C3_tg85kvOH9w"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/attribute_group",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"attribute_group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Attribute Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzAyNDc2OCwiZXhwIjoxNTM3MDI4MzY4LCJuYmYiOjE1MzcwMjQ3NjgsImp0aSI6Ik5XdW4wSjM5TG1tVDRvYkYiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.r6tBTyOBcy874qP88_W3wmCGkKn5n1C3_tg85kvOH9w"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/attribute_group/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"attribute_group",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Currency Rate",
+					"item": [
+						{
+							"name": "Get Currency Rate",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA1ODM4MCwiZXhwIjoxNTM3MDYxOTgwLCJuYmYiOjE1MzcwNTgzODAsImp0aSI6Ilg4TU9oZnR0SWp3bnFnNVUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.yCH9_tIyZ7FWE16Ih7GCBVHJklQonSQsLcF04cGPnnI"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/currency_rate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"currency_rate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Currency Rate",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA1OTk5NywiZXhwIjoxNTM3MDYzNTk3LCJuYmYiOjE1MzcwNTk5OTcsImp0aSI6IlpySlowOEJmOFFxQnB4RksiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.oipdDuVzioEvIcA9n53d99TQG8y9xmMl4aqfLZFc9J0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/currency_rate/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"currency_rate",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Filter",
+					"item": [
+						{
+							"name": "Get Filter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA2NTcwOCwiZXhwIjoxNTM3MDY5MzA4LCJuYmYiOjE1MzcwNjU3MDgsImp0aSI6IkF1RGJuTlR6V2FoWTczV3IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.l05hJSXO747OeG9oVKitHF2ymOSTYoqPb71iEmhajwU"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/filters",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"filters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Filter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA2NTcwOCwiZXhwIjoxNTM3MDY5MzA4LCJuYmYiOjE1MzcwNjU3MDgsImp0aSI6IkF1RGJuTlR6V2FoWTczV3IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.l05hJSXO747OeG9oVKitHF2ymOSTYoqPb71iEmhajwU"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/filters/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"filters",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Filter Group",
+					"item": [
+						{
+							"name": "Get Filter Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA2NTUyNCwiZXhwIjoxNTM3MDY5MTI0LCJuYmYiOjE1MzcwNjU1MjQsImp0aSI6Ik1pM1dlVVdGVGxyaGdadjciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.a6aVRZY6f7t4nwYJhyzTyOanPUDIwJXMefP1fdP6oyI"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/filters_group",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"filters_group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Filter Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA2MzkwMiwiZXhwIjoxNTM3MDY3NTAyLCJuYmYiOjE1MzcwNjM5MDIsImp0aSI6ImVzbHNjMVI3bTVyVERIQ1QiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.G_M9nHMSq71wPRuDVUSo1Tf5x054YeK9YgWny7uQ02Y"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/filters_group/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"filters_group",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Language",
+					"item": [
+						{
+							"name": "Get Language",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA3NTc3MSwiZXhwIjoxNTM3MDc5MzcxLCJuYmYiOjE1MzcwNzU3NzEsImp0aSI6ImhqbjUwdjMzOEl0ZTBYeDAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RjjlC2l0FwSzhKoeB2vIVBN1GKcR2E_E5w8AFGnXQ3c"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/languages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"languages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Language",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA3NTc3MSwiZXhwIjoxNTM3MDc5MzcxLCJuYmYiOjE1MzcwNzU3NzEsImp0aSI6ImhqbjUwdjMzOEl0ZTBYeDAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RjjlC2l0FwSzhKoeB2vIVBN1GKcR2E_E5w8AFGnXQ3c"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/languages/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"languages",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Manufacturer",
+					"item": [
+						{
+							"name": "Get Manufacturer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA3NTc3MSwiZXhwIjoxNTM3MDc5MzcxLCJuYmYiOjE1MzcwNzU3NzEsImp0aSI6ImhqbjUwdjMzOEl0ZTBYeDAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RjjlC2l0FwSzhKoeB2vIVBN1GKcR2E_E5w8AFGnXQ3c"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/manufacturers",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"manufacturers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Manufacturer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA3NTc3MSwiZXhwIjoxNTM3MDc5MzcxLCJuYmYiOjE1MzcwNzU3NzEsImp0aSI6ImhqbjUwdjMzOEl0ZTBYeDAiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RjjlC2l0FwSzhKoeB2vIVBN1GKcR2E_E5w8AFGnXQ3c"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/manufacturers/5/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"manufacturers",
+										"5",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Customers",
+					"item": [
+						{
+							"name": "Get Customer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4NzI0OSwiZXhwIjoxNTM3MDkwODQ5LCJuYmYiOjE1MzcwODcyNDksImp0aSI6IjdPdGhVeURrS0w0TTFzRUsiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.w6ek9pnVKFw0odpFC7EmdgE29duQJeI9v1NLpYyi8cQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/customers",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Customer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4NzI0OSwiZXhwIjoxNTM3MDkwODQ5LCJuYmYiOjE1MzcwODcyNDksImp0aSI6IjdPdGhVeURrS0w0TTFzRUsiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.w6ek9pnVKFw0odpFC7EmdgE29duQJeI9v1NLpYyi8cQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/customers/5/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										"5",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Customers Group",
+					"item": [
+						{
+							"name": "Get Customer Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4NzI0OSwiZXhwIjoxNTM3MDkwODQ5LCJuYmYiOjE1MzcwODcyNDksImp0aSI6IjdPdGhVeURrS0w0TTFzRUsiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.w6ek9pnVKFw0odpFC7EmdgE29duQJeI9v1NLpYyi8cQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/customer_groups",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"customer_groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Customer Group",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4NzI0OSwiZXhwIjoxNTM3MDkwODQ5LCJuYmYiOjE1MzcwODcyNDksImp0aSI6IjdPdGhVeURrS0w0TTFzRUsiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.w6ek9pnVKFw0odpFC7EmdgE29duQJeI9v1NLpYyi8cQ"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/customer_groups/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"customer_groups",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "46b90017-8673-468e-914c-c8c941531c01",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "746f3940-cebd-4911-be4f-a9b51392caed",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "GeoZone",
+					"item": [
+						{
+							"name": "Get Geo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3OTAwMCwiZXhwIjoxNTM3MTgyNjAwLCJuYmYiOjE1MzcxNzkwMDAsImp0aSI6InBsR09qYWRDVHdDYU9KN0oiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.xuKe8Qg63IkoG6aXGoPz_g_eY9ihc7oQ384YWgmUqQk"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Get Geo",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Zone",
+					"item": [
+						{
+							"name": "Get Zone",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzk3ODU0NCwiZXhwIjoxNTM3OTgyMTQ0LCJuYmYiOjE1Mzc5Nzg1NDQsImp0aSI6IkFQb3dWZzI1am9nS0xweHUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.vULwHvRufpG1Xtu8yGY22k853O8Pcq9t8s0ZOiB4aDM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3OTAwMCwiZXhwIjoxNTM3MTgyNjAwLCJuYmYiOjE1MzcxNzkwMDAsImp0aSI6InBsR09qYWRDVHdDYU9KN0oiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.xuKe8Qg63IkoG6aXGoPz_g_eY9ihc7oQ384YWgmUqQk"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/zone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"zone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Zone",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Country",
+					"item": [
+						{
+							"name": "Get Country",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzk3ODU0NCwiZXhwIjoxNTM3OTgyMTQ0LCJuYmYiOjE1Mzc5Nzg1NDQsImp0aSI6IkFQb3dWZzI1am9nS0xweHUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.vULwHvRufpG1Xtu8yGY22k853O8Pcq9t8s0ZOiB4aDM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3OTAwMCwiZXhwIjoxNTM3MTgyNjAwLCJuYmYiOjE1MzcxNzkwMDAsImp0aSI6InBsR09qYWRDVHdDYU9KN0oiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.xuKe8Qg63IkoG6aXGoPz_g_eY9ihc7oQ384YWgmUqQk"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/country",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"country"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Country",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Credit Type",
+					"item": [
+						{
+							"name": "Get Credit Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4OTg0NywiZXhwIjoxNTM3MDkzNDQ3LCJuYmYiOjE1MzcwODk4NDcsImp0aSI6IjhaTmd6TXdhQ0VJdVZENU8iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.4_xwN-zzz791TIhr5H5plylcwLcXqxp2jSNdmep-Bt0"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/credit_type",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"credit_type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Credit Type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/credit_type/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"credit_type",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1af2884c-7c4f-4aa7-b804-e50da1314b38",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e94ff1d-f542-4734-a4ce-7723d63a9609",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Credit Type Value",
+					"item": [
+						{
+							"name": "Get Credit Type Value",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Credit Type Value",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzA4ODM2OCwiZXhwIjoxNTM3MDkxOTY4LCJuYmYiOjE1MzcwODgzNjgsImp0aSI6IkhqSVZLZ2ZXSG92ZmV2d0MiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XeCd5eyeYhZplyTH7K6t1spwVMzlX0QuLkbna6Shw2s"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/geo_zone/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"geo_zone",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Order Status",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/order_status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/order_status/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"order_status",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tax Class",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_class/3/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_class",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Weight Class",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/weight_class",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"weight_class"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/weight_class/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"weight_class",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tax Rate",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rate/86/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rate",
+										"86",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tax Rate Group",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rate_to_customer_group",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rate_to_customer_group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rate_to_customer_group/1/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rate_to_customer_group",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tax Rule",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rule",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzE3NDc1NSwiZXhwIjoxNTM3MTc4MzU1LCJuYmYiOjE1MzcxNzQ3NTUsImp0aSI6ImRZT0wzNzdvOEZ5dFFmYTUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.Wov5DRNyguLBEicwlbnQw2WImDsNAaxi7kOoBTT0mKs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/tax_rule/128/edit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tax_rule",
+										"128",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f047e82e-28e8-43ed-ae1a-8462020e82bf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "25f3e359-7033-4b28-8278-10ea5a2f099e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Get Menu",
+			"item": [
+				{
+					"name": "Get Menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzOTUyNzc0NSwiZXhwIjoxNTM5NTMxMzQ1LCJuYmYiOjE1Mzk1Mjc3NDUsImp0aSI6IlR6R2JWNkJpRFg0eEtIeXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3oiprz-8E8soNKxqn7Q_hCANPXMJ0f4r5re4knFKJnM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/getMenus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"getMenus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Menu",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTUzNzQzMzI1MCwiZXhwIjoxNTM3NDM2ODUwLCJuYmYiOjE1Mzc0MzMyNTAsImp0aSI6ImFTaHhhb1lkSmlqaTVNT1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.3lspt2Y-nLbPkJV-k5SyVkEYqmLJ-eFZasUca3upwZ8"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"admin@admin.com\",\n  \"password\":\"cambodia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/customers/2/edit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"customers",
+								"2",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a0505c4f-2ade-40c8-8127-7e2d044722fd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4aab74d5-c4f0-4de3-9e39-676f7001e844",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
