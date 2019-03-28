@@ -85,6 +85,10 @@ class OrderModel extends Model
 		return $datas;
 	}
 
+	public function OrderStatus(){
+		return $this->belongsTo(OrderStatus::class, 'order_status_id');
+	}
+
 	static function AllOrder()
 	{
 		$AllOrders=DB::table('order as o')
@@ -96,15 +100,27 @@ class OrderModel extends Model
 		return $AllOrders;
 	 }
 
-	 static function getCarrierBaseOrder($order_id){
+	 static function getCarrierBaseOrder($order_id, $store_id){
 		 $query = DB::table('order_shipment as os')
 				   ->Join('order as o', 'o.order_id', '=', 'os.order_id')
 				   ->Join('carrier as c', 'c.carrier_id', '=', 'os.carrier_id')
 				   ->Where('o.order_id', $order_id)
+				   ->where('o.store_id', $store_id)
 				   ->Select('os.*', 'c.name as carrier')
 				   ->get();
 		
 		 return $query;
 	 }
+
+	 static function getPaymentByOrder($order_id, $store_id){
+		$query = DB::table('order_payment as op')
+				  ->Join('order as o', 'o.order_id', '=', 'op.order_id')
+				  ->Where('o.order_id', $order_id)
+				  ->where('o.store_id', $store_id)
+				  ->Select('op.*')
+				  ->get();
+	   
+		return $query;
+	}
 
 }

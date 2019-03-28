@@ -23,7 +23,7 @@
       <v-menu offset-y origin="center center" class="elelvation-1" :nudge-bottom="14" transition="scale-transition">
         <v-btn icon flat slot="activator">
         <v-badge color="red" overlap>
-          <span slot="badge">3</span>
+          <span slot="badge">0</span>
           <v-icon medium>notifications</v-icon>
         </v-badge>
         </v-btn>
@@ -47,7 +47,7 @@
 
           <v-list-tile @click.prevent="logout">
             <v-list-tile-action>
-              <v-icon>fullscreen_exit</v-icon>
+              <v-icon>clear</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>Logout</v-list-tile-title>
@@ -69,20 +69,20 @@ export default {
     items: [
       {
         icon: 'account_circle',
-        href: '#',
+        href: '/#/profile',
         title: 'Profile',
         click: (e) => {
           console.log(e);
         }
       },
-      {
-        icon: 'settings',
-        href: '#',
-        title: 'Settings',
-        click: (e) => {
-          console.log(e);
-        }
-      },
+      // {
+      //   icon: 'settings',
+      //   href: '#',
+      //   title: 'Settings',
+      //   click: (e) => {
+      //     console.log(e);
+      //   }
+      // },
       // {
       //   icon: 'fullscreen_exit',
       //   href: '#',

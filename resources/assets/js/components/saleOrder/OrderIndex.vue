@@ -62,10 +62,10 @@
                   <td>{{ props.item.store_name }}</td>
                   <td>{{ props.item.payment_firstname }} {{ props.item.payment_lastname }}</td>
                   <td>{{ props.item.email }}</td>
-                  <td>{{ props.item.telephone_1 }}</td>
+                  <td>{{ props.item.telephone }}</td>
                   <td>
-                    <v-chip v-if="props.item.status==1" label small :color="getColorByStatus('success')" text-color="white" >{{ "Active" }}</v-chip>
-                    <v-chip v-else label small :color="getColorByStatus('warning')" text-color="white" >{{ "Inactive" }}</v-chip>
+                    <v-chip label small :color="getColorByStatus('success')" text-color="white" >{{ props.item.status }}</v-chip>
+                    <!--<v-chip v-else label small :color="getColorByStatus('warning')" text-color="white" >{{ "Inactive" }}</v-chip>-->
                   </td>
                   <td>
                     <v-btn @click="viewEdit(props.item.order_id)" depressed outline icon fab dark color="primary" small>

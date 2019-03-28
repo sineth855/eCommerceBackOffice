@@ -70,9 +70,12 @@
                     <v-btn @click="viewEdit(props.item.reseller_id)" depressed outline icon fab dark color="primary" small>
                       <v-icon>edit</v-icon>
                     </v-btn>
-                    <v-btn @click="btnConfirm(props.item.reseller_id)"  depressed outline icon fab dark color="red" small>
-                      <v-icon>delete</v-icon>
+                    <v-btn href="" depressed outline icon fab dark color="success" small>
+                      <v-icon>lock</v-icon>
                     </v-btn>
+                    <!--<v-btn @click="btnConfirm(props.item.reseller_id)"  depressed outline icon fab dark color="red" small>
+                      <v-icon>delete</v-icon>
+                    </v-btn>-->
                   </td>
                 </template>
               </v-data-table>
@@ -90,6 +93,9 @@
   import Message from '~/components/common/Message'
   import DialogConfirm from '~/components/common/DialogConfirm'
   import Flash from '~/services/flash'
+  import {globalUrl} from '~/config/config'
+  const configUrl = globalUrl();
+
   export default {
     data () {
       return {
@@ -155,6 +161,9 @@
       },
       viewEdit(id){
         this.$router.push(this.routeUrl+'/'+id)
+      },
+      accessResellerStore(reseller_id){
+        this.$router.push(configUrl)
       },
       createNew(){
         this.$router.push({name:this.routeName})

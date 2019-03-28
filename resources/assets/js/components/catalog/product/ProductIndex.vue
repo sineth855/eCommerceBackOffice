@@ -58,7 +58,6 @@
                   ></v-checkbox>
                 </td> 
                   <td>{{ props.index+1 }}</td>
-                  <td><img width="60px" :src="props.item.image" alt="image"/></td>
                   <td>{{ props.item.product_name }}</td>
                   <td>{{ props.item.model }}</td>
                   <td>{{ props.item.price }}</td>
@@ -113,10 +112,6 @@
             {
               text: 'ID',
               value: 'id'
-            },
-            {
-              text: 'Image',
-              value: 'image'
             },
             {
               text: 'Product Name',

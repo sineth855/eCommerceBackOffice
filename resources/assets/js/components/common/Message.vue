@@ -25,10 +25,7 @@
         data () {
             return {
                 email: '',
-                valid: true,
-                formData: {
-                    name: '',
-                }
+                valid: true
             };
         }
     }    

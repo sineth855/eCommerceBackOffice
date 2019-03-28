@@ -11,11 +11,58 @@ use App\Http\Models\BackEnd\Language\Language;
     For more detail i have comment in DataAction class in commons folder
 */
 use App\Http\Controllers\BackEnd\commons\DataAction;
+use Cache;
+use DB;
+use Response;
+
 class OrderStatusController extends Controller
 {
     public function index()
-    {
+    {   
+        // $value = Cache::rememberForever('users', function() {
+        //     return DB::table('users')->get();
+        // });
 
+        // $allproducts = Cache::remember('allproducts',60, function() {
+        //     return DB::table('users')->get();
+        // });
+        // $alluser = '';
+        // if( Cache::has( 'users' ) ) {
+        //     return $alluser = Cache::get( 'users' );
+        //   }
+        // dd($alluser);
+    //    $data = Cache::remember('articles', 15, function() {
+    //         return OrderStatus::all();
+    //     });
+        
+        // $StockStatus=OrderStatus::AllStockStatus();
+        // Cache::put('007', $StockStatus, 60);
+        // Cache::remember('OrderStatus', 15, function() {
+        //     return OrderStatus::all();
+        // });
+        // dd(Cache::get('007'));
+        // #####################
+        
+        // $response_data = array();
+        // $response_code = 200;
+
+        // // TRY TO RETURN A CACHED RESPONSE
+        // $cache_key = "gallery_index";
+        // $response_data = Cache::get($cache_key, null);
+
+        // // IF NO CACHED RESPONSE, QUERY THE DATABASE
+        // if (!$response_data) {
+        //     try {
+        //         $response_data['items'] = OrderStatus::AllStockStatus();
+        //         Cache::put($cache_key, $response_data, 60);
+        //     } catch (PDOException $ex) {
+        //         $response_code = 500;
+        //         $response_data['error'] = ErrorReporter::raiseError($ex->getCode());
+        //     }
+        // }
+
+        // return Response::json($response_data, $response_code);
+        // ####################
         $StockStatus=OrderStatus::AllStockStatus();
         return response()->json(['success'=>true,'data'=>$StockStatus,'total'=>count($StockStatus)]);
     }

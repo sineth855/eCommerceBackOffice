@@ -22,7 +22,8 @@ $polyfills = [
     'String.prototype.endsWith',
 ];
 @endphp
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features={{ implode(',', $polyfills) }}"></script>
+<!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features={{ implode(',', $polyfills) }}"></script> -->
+<script src="./js/polyfill.min.js?features={{ implode(',', $polyfills) }}"></script>
 
 {{-- Load the application scripts --}}
 @if (app()->isLocal())

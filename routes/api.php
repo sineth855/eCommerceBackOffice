@@ -12,7 +12,10 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['middleware' => ['auth:api','SettingConfig']], function () {
+// Route::group(['middleware' => ['SettingConfig','cors']], function () {
+    // Route::Resource('/order_status','BackEnd\OrderStatus\OrderStatusController');
+// });
+Route::group(['middleware' => ['auth:api','SettingConfig','cors']], function () {
     Route::post('logout', 'Auth\LoginController@logout');
     //****catalog****
     //stock status
@@ -128,6 +131,7 @@ Route::group(['middleware' => ['auth:api','SettingConfig']], function () {
 
     //=====Sale order=============================
     Route::resource('sale_order', 'BackEnd\Order\SaleOrderController');
+    Route::post('sale_order/create_order_payment', 'BackEnd\Order\SaleOrderController@createOrderPayment');
     Route::resource('order_shippment', 'BackEnd\Order\OrderShipmentController');
 
     //=====file upload service ===================

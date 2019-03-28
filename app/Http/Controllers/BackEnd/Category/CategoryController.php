@@ -195,8 +195,15 @@ class CategoryController extends Controller
         // foreach ($description as $key=>$value) {
         //     $data[$key]=$value;
         // }
-        // // return $data;        
-        $query = "SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR '&nbsp;&nbsp;&gt;&nbsp;&nbsp;') FROM " . env("DB_PREFIX") . "category_path cp LEFT JOIN " . env("DB_PREFIX") . "category_description cd1 ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)config_language_id . "' GROUP BY cp.category_id) AS path, (SELECT DISTINCT keyword FROM " . env("DB_PREFIX") . "url_alias WHERE query = 'category_id=" . (int)$id . "') AS keyword FROM " . env("DB_PREFIX") . "category c LEFT JOIN " . env("DB_PREFIX") . "category_description cd2 ON (c.category_id = cd2.category_id) WHERE c.category_id = '" . (int)$id . "' AND cd2.language_id = '" . (int)config_language_id . "'";
+        // // return $data;
+        $query = "SELECT DISTINCT *, (SELECT GROUP_CONCAT(cd1.name ORDER BY level SEPARATOR '&nbsp;&nbsp;&gt;&nbsp;&nbsp;') 
+        FROM sg_category_path cp LEFT JOIN sg_category_description cd1 
+        ON (cp.path_id = cd1.category_id AND cp.category_id != cp.path_id) 
+        WHERE cp.category_id = c.category_id AND cd1.language_id = '" . (int)config_language_id . "' 
+        GROUP BY cp.category_id) AS path, (SELECT DISTINCT keyword FROM sg_url_alias 
+        WHERE query = 'category_id=" . (int)$id . "') AS keyword FROM sg_category c 
+        LEFT JOIN sg_category_description cd2 ON (c.category_id = cd2.category_id) 
+        WHERE c.category_id = '" . (int)$id . "' AND cd2.language_id = '" . (int)config_language_id . "'";
         // dd($query);
         $data['general'] = DB::select(DB::raw($query))[0];
         $data['filter'] = CategoryModel::getFilterBaseCategoryId($id);

@@ -1,5 +1,6 @@
 <template>
   <v-app id="login" class="primary">
+    <div v-if="busy" id="loading"><img width="100px" src="/img/static/loading.gif"/></div>
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
@@ -118,7 +119,9 @@
     </v-flex>
   </v-layout>-->
 </template>
-
+<style>
+    #loading{position:absolute;top:30%;left:46%;right:40%;z-index:100}
+</style>
 <script>
 import Form from 'vform'
 

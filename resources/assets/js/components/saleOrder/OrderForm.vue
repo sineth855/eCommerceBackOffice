@@ -11,6 +11,7 @@
       <v-layout row wrap>
         <v-flex lg4>
           <v-layout row wrap>
+          
             <!--v-flex-->
             <v-flex lg12>
               <v-card class="_mt-3">
@@ -56,8 +57,35 @@
                   </v-bottom-nav>   
                 </div>
                 <!--#End customer detail-->
+                
+
                 <v-list two-line>
-                  <v-list-tile href="">
+                  <v-list-tile href="javascript:void(0);">
+                    <v-list-tile-action>
+                      <v-icon color="indigo">person</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                      <!--<v-list-tile-title>{{ data['lastname'] }} {{ data['firstname'] }}</v-list-tile-title>-->
+                      <!--<v-list-tile-sub-title>Customer</v-list-tile-sub-title>-->
+                      
+                    </v-list-tile-content>
+                    <v-autocomplete
+                        :items="customers"
+                        v-model="formData.customer_id"
+                        label="Choose Customer"
+                        single-line
+                        required
+                        item-text="name"
+                        item-value="id"
+                        v-validate="'required'" 
+                        required
+                      ></v-autocomplete>
+                    <v-list-tile-action>
+                      <v-icon>chat</v-icon>
+                    </v-list-tile-action>
+                  </v-list-tile>
+                  <v-divider inset></v-divider>
+                  <v-list-tile href="javascript:void(0);">
                     <v-list-tile-action>
                       <v-icon color="indigo">phone</v-icon>
                     </v-list-tile-action>
@@ -70,7 +98,7 @@
                     </v-list-tile-action>
                   </v-list-tile>
                   <v-divider inset></v-divider>
-                  <v-list-tile href="#">
+                  <v-list-tile href="javascript:void(0);">
                     <v-list-tile-action>
                       <v-icon color="indigo">mail</v-icon>
                     </v-list-tile-action>
@@ -80,17 +108,17 @@
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-divider inset></v-divider>
-                  <v-list-tile href="#">
+                  <v-list-tile href="javascript:void(0);">
                     <v-list-tile-action>
                       <v-icon color="indigo">location_on</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title>{{ data['payment_address_1'] }}</v-list-tile-title>
-                      <v-list-tile-sub-title></v-list-tile-sub-title>
+                      <v-list-tile-sub-title>Address 1</v-list-tile-sub-title>
                     </v-list-tile-content>
                     <v-list-tile-content>
                       <v-list-tile-title>{{ data['payment_address_2'] }}</v-list-tile-title>
-                      <v-list-tile-sub-title></v-list-tile-sub-title>
+                      <v-list-tile-sub-title> Address 2</v-list-tile-sub-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
@@ -106,22 +134,193 @@
             <!--tab-->
             <v-tabs text-and-icons>
               
-              <v-tab href="#tab-1">
+              <v-tab>
                 <v-icon>payment</v-icon> &nbsp; Order
               </v-tab>
 
-              <v-tab href="#tab-2">
+              <v-tab>
                 <v-icon>local_shipping</v-icon> &nbsp; Shipping
+                <!--<v-tooltip bottom>
+                  <v-btn icon slot="activator">
+                    <v-icon color="text--secondary">add</v-icon>
+                  </v-btn>
+                  <span>Add Shipping</span>
+                </v-tooltip>-->
+                <v-dialog v-model="basic.dialogShipping" persistent max-width="500px">                
+                    <v-btn icon slot="activator"><v-icon color="text--secondary">add</v-icon></v-btn>
+                    <v-form ref="formShipping" v-model="validShipping" lazy-validation>
+                    <!--<v-form ref="form_shipping" v-model="validShipping" lazy-validation @submit.prevent="onSubmitShipment">-->
+                      <v-card>
+                        <v-card-title>
+                          <span class="headline">Add Shipping</span>
+                        </v-card-title>
+                        <v-divider></v-divider>
+                        <v-card-text>
+                          <v-layout wrap>
+                            <v-flex xs12 sm12 md12>
+                              <v-autocomplete
+                                :items="carriers"
+                                v-model="formCarrier.carrier_id"
+                                label="Carriers"
+                                single-line
+                                required
+                                item-text="name"
+                                item-value="name"
+                                v-validate="'required'"
+                                data-vv-name="carrier shipping"     
+                                :error-messages="errors.collect('carrier shipping')"  
+                                required
+                              ></v-autocomplete>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.amount" v-validate="'required'" label="Amount" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.weight" v-validate="'required'" label="Weight" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.shipping_cost_tax_excl" v-validate="'required'" label="Shipping Cost Tax Exclude"></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.shipping_cost_tax_incl" v-validate="'required'" label="Shipping Cost Tax Include"></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.tracking_number" label="Tracking Number"></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.expected_delivery_date" v-validate="'required'" label="Expected Delivery Date" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.pickup_date" v-validate="'required'" label="Pickup Date" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.pickup_time" v-validate="'required'" label="Pickup Time" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.origin_pick_up" v-validate="'required'" label="Origin Pick Up" required></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm12 md12>
+                              <v-text-field v-model="formCarrier.destination" v-validate="'required'" label="Destination" required></v-text-field>
+                            </v-flex>
+                          </v-layout>
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" flat @click.native="basic.dialogShipping = false">Close</v-btn>
+                          <v-btn type="button" @click="addShipment()" color="blue darken-1" flat>Save</v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-form>
+                </v-dialog>
               </v-tab>
 
-              <v-tab href="#tab-3">
+              <v-tab>
                 <v-icon>money</v-icon> &nbsp; Payment
-                <v-tooltip bottom>
+                <!--<v-tooltip bottom>
                   <v-btn icon slot="activator">
                     <v-icon color="text--secondary">add</v-icon>
                   </v-btn>
                   <span>Add more payment</span>
-                </v-tooltip>
+                </v-tooltip>-->
+                <message
+                        ref="child"
+                        :notifyStatus="notifyStatus"
+                        :message="message" ></message>
+                <v-dialog v-model="basic.dialogPayment" persistent max-width="500px">                
+                    <v-btn icon slot="activator"><v-icon color="text--secondary">add</v-icon></v-btn>
+                    <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="onSubmitPayment">
+                      <v-card>
+                        <v-card-title>
+                          <span class="headline">Add Payment</span>
+                        </v-card-title>
+                        <v-divider></v-divider>
+                        <v-card-text>
+                          <v-container grid-list-md>
+                            <v-layout wrap>
+                                <v-flex xs12 sm12 md12>
+                                  <!--<v-text-field v-model="formPayment.date" label="Date" required></v-text-field>-->
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-menu
+                                    class="pr-2"
+                                    ref="statAvailableDate"
+                                    lazy
+                                    :close-on-content-click="false" 
+                                    transition="scale-transition"
+                                    offset-y
+                                    full-width
+                                    :nudge-bottom="-22"
+                                    max-width="290px"
+                                    v-model="availableDate"
+                                  >
+                                    <v-text-field
+                                      slot="activator"
+                                      label="Payment Date"
+                                      v-model="formPayment.date"
+                                      append-icon="event"
+                                      readonly
+                                      v-validate="'required'"
+                                      data-vv-name="date available"     
+                                      :error-messages="errors.collect('date available')"  
+                                      required
+                                    ></v-text-field>
+                                    <v-date-picker v-model="formPayment.date" no-title scrollable>
+                                      <v-spacer></v-spacer>
+                                      <v-btn flat color="primary" @click="availableDate = false">Cancel</v-btn>
+                                      <v-btn flat color="primary" @click="$refs.statAvailableDate.save(formPayment.date)">OK</v-btn>
+                                    </v-date-picker>
+                                  </v-menu>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-autocomplete
+                                    :items="paymentMethods"
+                                    v-model="formPayment.payment_method"
+                                    label="Payment Method"
+                                    single-line
+                                    required
+                                    item-text="name"
+                                    item-value="name"
+                                    v-validate="'required'"
+                                    data-vv-name="payment method"     
+                                    :error-messages="errors.collect('payment method')"  
+                                    required
+                                  ></v-autocomplete>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-autocomplete
+                                    :items="currencies"
+                                    v-model="formPayment.currency_id"
+                                    label="Currency"
+                                    single-line
+                                    required
+                                    item-text="name"
+                                    item-value="id"
+                                    v-validate="'required'"
+                                    data-vv-name="currency"     
+                                    :error-messages="errors.collect('currency')"  
+                                    required
+                                  ></v-autocomplete>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-text-field v-model="formPayment.amount" label="Amount" required></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-text-field v-model="formPayment.transaction_id" label="Transaction ID" required></v-text-field>
+                                </v-flex>
+                                <v-flex xs12 sm12 md12>
+                                  <v-text-field v-model="formPayment.remark" label="Remark" required></v-text-field>
+                                </v-flex>
+                            </v-layout>
+                          </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" flat @click.native="basic.dialogPayment = false">Close</v-btn>
+                          <v-btn type="submit" color="blue darken-1" flat>Save</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                  </v-form>
+                </v-dialog>
               </v-tab>
 
               <!--<v-tab href="#tab-4">
@@ -133,7 +332,7 @@
                 <v-layout row>
                   <v-flex xs6>
                     <v-list two-line>
-                      <v-list-tile href="">
+                      <v-list-tile href="javascript:void(0);">
                         <v-list-tile-action>
                           <v-icon color="indigo">local_shipping</v-icon>
                         </v-list-tile-action>
@@ -153,8 +352,8 @@
                           ></v-autocomplete>
                         </div>
                       </v-list-tile>
-                      <v-divider inset></v-divider>
-                      <v-list-tile href="#">
+                      
+                      <v-list-tile href="javascript:void(0);">
                         <v-list-tile-action>
                           <v-icon color="indigo">mail</v-icon>
                         </v-list-tile-action>
@@ -164,7 +363,7 @@
                         </v-list-tile-content>
                       </v-list-tile>
                       <v-divider inset></v-divider>
-                      <v-list-tile href="#">
+                      <v-list-tile href="javascript:void(0);">
                         <v-list-tile-action>
                           <v-icon color="indigo">location_on</v-icon>
                         </v-list-tile-action>
@@ -222,17 +421,16 @@
                     <template>
                       <v-data-table
                         :headers="headerPayment"
-                        :items="shipments"
+                        :items="order_payments"
                         hide-actions
                         class="elevation-0 table-striped"
                       >
                         <template slot="items" slot-scope="props">
                           <td>{{ props.index+1 }}</td>
-                          <td class="text-xs-left">{{ props.item.carrier }}</td>
-                          <td class="text-xs-left">{{ props.item.weight }}</td>
-                          <td class="text-xs-left">{{ props.item.shipping_cost_tax_excl }}</td>
-                          <td class="text-xs-left">{{ props.item.shipping_cost_tax_incl }}</td>
-                          <td class="text-xs-left">{{ props.item.tracking_number }}</td>
+                          <td class="text-xs-left">{{ props.item.date_add }}</td>
+                          <td class="text-xs-left">{{ props.item.amount }}</td>
+                          <td class="text-xs-left">{{ props.item.payment_method }}</td>
+                          <td class="text-xs-left">{{ props.item.transaction_id }}</td>
                         </template>
                       </v-data-table>
                     </template>
@@ -251,12 +449,64 @@
             <v-toolbar card dense color="transparent">
               <v-toolbar-title><h4>Order List</h4></v-toolbar-title>
               <v-spacer></v-spacer>
-              <v-tooltip bottom>
+                <!--<v-tooltip bottom>
                 <v-btn icon slot="activator">
                   <v-icon color="text--secondary">add</v-icon>
                 </v-btn>
-                <span>Add More Products</span>
-              </v-tooltip> 
+                <v-tooltip-->
+                <v-dialog v-model="basic.dialog" persistent max-width="500px">                
+                    <v-btn icon slot="activator"><v-icon color="text--secondary">add</v-icon></v-btn>
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">Product</span>
+                      </v-card-title>
+                      <v-divider></v-divider>
+                      <v-card-text>
+                        <v-layout wrap>
+                          <v-flex xs12 sm12 md12>
+                            <!--<v-text-field label="Choose Store" required></v-text-field>-->
+                            <v-autocomplete
+                                :items="stores"
+                                v-model="formProduct.store"
+                                label="Store"
+                                single-line
+                                required
+                                item-text="name"
+                                item-value="name"
+                                v-validate="'required'"
+                                data-vv-name="store"     
+                                :error-messages="errors.collect('store')"  
+                                required
+                              ></v-autocomplete>
+                          </v-flex>
+                          <v-flex xs12 sm12 md12>
+                            <!--<v-text-field label="Product Name" required></v-text-field>-->
+                            <v-autocomplete
+                                :items="products"
+                                v-model="formProduct.productName"
+                                label="Products"
+                                single-line
+                                required
+                                item-text="name"
+                                item-value="id"
+                                v-validate="'required'"
+                                data-vv-name="product"     
+                                :error-messages="errors.collect('product')"  
+                                required
+                              ></v-autocomplete>
+                          </v-flex>
+                          <v-flex xs12 sm12 md12>
+                            <v-text-field v-model="formProduct.qty" label="Quantity" required></v-text-field>
+                          </v-flex>
+                        </v-layout>
+                      </v-card-text>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" flat @click.native="basic.dialog = false">Close</v-btn>
+                        <v-btn color="blue darken-1" flat @click="saveOrderItem();">Save</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                </v-dialog>
             </v-toolbar>
             <v-divider></v-divider>
             <v-card-text class="pa-0">
@@ -275,7 +525,11 @@
                     <td class="text-xs-left">{{ props.item.reward }}</td>
                     <td class="text-xs-left">{{ props.item.quantity }}</td>
                     <td class="text-xs-left">{{ props.item.price }}</td>
-                    <td class="text-xs-left"><v-chip label small :color="getColorByStatus(props.item.order_status_id)" text-color="white" >{{ props.item.order_status_id }}</v-chip></td>
+                    <td class="text-xs-left">
+                      <v-btn @click="btnConfirm(props.item.id)" depressed outline icon fab dark color="red" small>
+                        <v-icon>delete</v-icon>
+                      </v-btn>
+                    </td>
                   </template>
                 </v-data-table>
               </template>
@@ -288,23 +542,23 @@
         <v-flex lg3>
           <v-card class="_mt-3">
             <v-list two-line>
-              <v-list-tile href="">
+              <v-list-tile href="javascript:void(0);">
                 <v-list-tile-action>
-                  Total : {{ '120' }}
+                  Sub Total : {{ sub_total }}
                 </v-list-tile-action>
               </v-list-tile>
               <v-divider></v-divider>
               
-              <v-list-tile href="">
+              <v-list-tile href="javascript:void(0);">
                 <v-list-tile-action>
-                  Sub Total : {{ '120' }}
+                  Grand Total : {{ grand_total }}
                 </v-list-tile-action>
               </v-list-tile>
               <v-divider></v-divider>
 
-              <v-list-tile href="">
+              <v-list-tile href="javascript:void(0);">
                 <v-list-tile-action>
-                  Shipping : {{ '120' }}
+                  Shipping : {{ shipping_amount }}
                 </v-list-tile-action>
               </v-list-tile>
             </v-list>
@@ -318,11 +572,18 @@
 </template>
 
 <script>
-import {createData,editData,updateData} from '~/api/saleOrder/order'
+import {fetchList} from '~/api/catalog/product'
+import { createData,editData,updateData, createPaymentOrder } from '~/api/saleOrder/order';
+import { fetchCurrency } from '~/api/catalog/currencyRate';
 import { fetchOrderStatusList } from '~/api/system/orderStatus';
+import { fetchPaymentMethodList } from '~/api/payment/paymentMethod';
+import { fetchCarrierList } from '~/api/shipping/carrier';
+import { fetchStoreList } from '~/api/system/store';
+import { fetchCustomerList } from '~/api/customer/customer';
 import { getUser } from '~/api/user';
 import items from '~/api/order';
-import BreadCrumb from '~/components/common/BreadCrumb'
+import Message from '~/components/common/Message';
+import BreadCrumb from '~/components/common/BreadCrumb';
 import VWidget from '~/components/VWidget';
 import Flash from '~/services/flash';
 export default {
@@ -333,8 +594,23 @@ export default {
   },
   data () {
     return {
+      basic: {
+        dialog: false,
+        dialogShipping: false,
+        dialogPayment: false,
+      },
+      grand_total: 0,
+      sub_total: 0,
+      shipping_amount: 0,
+      stores: [],
+      products: [],
       data:{},
+      notifyStatus: '',
+      message: '',
       orderStatus: [],
+      availableDate: null,
+      valid: true,
+      validShipping: true,
       parent_name:'Orders',
       child_name:'Order Detail',
       routeName:'Sale Orders',
@@ -346,7 +622,36 @@ export default {
         tracking_number: 'Tracking Number',
       },
       formData: {
-        order_status_id: ''
+        order_status_id: '',
+        customer_id: ''
+      },
+      formPayment: {
+        order_id: this.id,
+        date: '',
+        amount: 0,
+        payment_method: '',
+        transaction_id: '',
+        remark: ''
+      },
+      formProduct: {
+        store: '',
+        productName: '',
+        qty: 1
+      },
+      formCarrier: {
+        carrier_id: '',
+        order_id: '',
+        amount: '',
+        weight: '',
+        shipping_cost_tax_excl: '',
+        shipping_cost_tax_incl: '',
+        tracking_number: '',
+        expected_delivery_date: '',
+        pickup_date: '',
+        pickup_time: '',
+        origin_pick_up: '',
+        destination: '',
+        date_added: ''
       },
       messages: [
         // {
@@ -393,7 +698,7 @@ export default {
         { text: 'Reward', value: 'reward' },
         { text: 'Quantity', value: 'quantity' },
         { text: 'Price', value: 'price' },
-        { text: 'Status', value: 'status' },
+        { text: 'Action', value: 'action' },
 
       ],
       headerShipment: [
@@ -423,13 +728,17 @@ export default {
           value: 'id'
         },
         { text: 'Date', value: 'date' },
-        { text: 'Payment Method', value: 'payment_method' },
-        { text: 'Transaction ID', value: 'transaction_id' },
         { text: 'Amount', value: 'amount' },
-        { text: 'Invoice', value: 'invoice' }
+        { text: 'Payment Method', value: 'payment_method' },
+        { text: 'Transaction ID', value: 'transaction_id' }
       ],
       items: [],
       shipments: [],
+      order_payments: [],
+      paymentMethods: [],
+      currencies: [],
+      carriers: [],
+      customers: [],
       colors: {
         processing: 'blue',
         sent: 'red',
@@ -545,13 +854,141 @@ export default {
     }
   },
   created() {
-    this.getOrderStatus();
     if(this.id){
       Flash.setLoading(true)
       this.getData();
     }
+    this.getOrderStatus();
+    this.getProduct();
+    this.getStore();
+    this.fetchCurrency();
+    this.fetchPaymentMethod();
+    this.fetchCarrier();
+    this.fetchCustomer();
   },
   methods: {
+    addShipment(){
+
+      this.carriers.push({
+        carrier_id: this.formCarrier.carrier_id,
+        amount: this.formCarrier.amount,
+        weight: this.formCarrier.weight,
+        shipping_cost_tax_excl: this.formCarrier.shipping_cost_tax_excl,
+        shipping_cost_tax_incl: this.formCarrier.shipping_cost_tax_incl,
+        tracking_number: this.formCarrier.tracking_number,
+        expected_delivery_date: this.formCarrier.expected_delivery_date,
+        pickup_date: this.formCarrier.pickup_date,
+        pickup_time: this.formCarrier.pickup_time,
+        origin_pick_up: this.formCarrier.origin_pick_up,
+        destination: this.formCarrier.destination
+      });
+      
+      //   createPaymentOrder(this.formPayment).then(response => {
+      //     if(response.success == true){
+      //       this.notifyStatus = 'success';
+      //       this.message = "Success fully";
+      //       this.formPayment = [];
+      //       this.basic.dialogPayment = false;
+      //     }else{
+      //       this.notifyStatus = 'error';
+      //       this.message = response.message;
+      //     }
+      //   }).catch(e => {
+      //       this.notifyStatus = 'error'
+      //       this.message = 'Error while trying to create data!'
+      //   })
+    },
+    onSubmitPayment(){
+      this.$validator.validateAll().then((result) => {
+        if(!result){
+          this.notifyStatus = 'error';
+          this.message = 'All fields are required!';
+          return false;
+        }
+              
+        createPaymentOrder(this.formPayment).then(response => {
+          if(response.success == true){
+            this.notifyStatus = 'success';
+            this.message = "Success fully";
+            this.formPayment = [];
+            this.basic.dialogPayment = false;
+          }else{
+            this.notifyStatus = 'error';
+            this.message = response.message;
+          }
+        }).catch(e => {
+            this.notifyStatus = 'error'
+            this.message = 'Error while trying to create data!'
+        })
+      });
+    },
+    savePayment(){
+      alert('save payment');
+    },
+    saveOrderItem(){
+      this.$validator.validateAll().then((result) => {
+        if(!result){
+          this.notifyStatus = 'error';
+          this.message = 'All fields are required!';
+          return false;
+        }
+      });
+      const productOrder = {
+        name: this.formProduct.productName,
+        storeId: this.formProduct.store
+      }
+      this.items.push({
+        name: this.formProduct.productName,
+        model:'model',
+        tax:'tax',
+        reward:'reward',
+        quantity:'quantity',
+        price:'price',
+      });
+      console.log('save order data', productOrder);
+    },
+    fetchCustomer(){
+      fetchCustomerList().then(response => {
+        // this.datatable = response
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'id':response['data'][x]['customer_id'],'name':response['data'][x]['lastname'] + response['data'][x]['firstname']};
+          this.customers.push(data);
+        }
+      })
+    },
+    getStore(){
+      fetchStoreList().then(response => {
+        // this.datatable = response
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'store_id':response['data'][x]['store_id'],'name':response['data'][x]['name']};
+          this.stores.push(data);
+        }
+      })
+    },
+    fetchCurrency() {
+      fetchCurrency().then(response => {
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'id':response['data'][x]['currency_id'],'name':response['data'][x]['code']};
+          this.currencies.push(data);
+        }
+      })
+    },
+    fetchCarrier() {
+      fetchCarrierList().then(response => {
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'id':response['data'][x]['carrier_id'],'name':response['data'][x]['name']};
+          this.carriers.push(data);
+        }
+      })
+    },
+    fetchPaymentMethod() {
+      fetchPaymentMethodList().then(response => {
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'id':response['data'][x]['payment_method_id'],'name':response['data'][x]['name']};
+          this.paymentMethods.push(data);
+        }
+      })
+    },
     getOrderStatus(){
       fetchOrderStatusList().then(response => {
         // this.datatable = response
@@ -561,12 +998,24 @@ export default {
         }
       })
     },
+    getProduct() {
+      fetchList().then(response => {
+        for(let x=0 ; x <= response['data'].length-1 ; x++){
+          let data = {'id':response['data'][x]['id'],'name':response['data'][x]['product_name']};
+          this.products.push(data);
+        }
+      })
+    },
     getData() {
       editData(this.id).then(response => {
         // fetch all form data
-        this.data = response['data'];
+        this.data = response['data'][0];
+        console.log('customer data', this.data);
+        this.formData.order_status_id = this.data.order_status_id;
+        this.formData.customer_id = this.data.customer_id;
         this.items = response['data']['products'];
         this.shipments = response['data']['shipment'];
+        this.order_payments = response['data']['order_payment'];
         Flash.setLoading(false)
       })
     },

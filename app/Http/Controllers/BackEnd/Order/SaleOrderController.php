@@ -10,6 +10,7 @@ use App\Http\Models\BackEnd\Order\OrderOption;
 use App\Http\Models\BackEnd\Order\OrderProduct;
 use App\Http\Models\BackEnd\Order\OrderShipment;
 use App\Http\Models\BackEnd\Order\OrderTotal;
+use App\Http\Models\BackEnd\Order\OrderPayment;
 use App\Http\Models\BackEnd\Order\ShippingCourier;
 use App\Http\Models\BackEnd\OrderStatus\OrderStatus;
 use App\Http\Controllers\BackEnd\commons\CommonsController;
@@ -25,9 +26,21 @@ class SaleOrderController extends Controller
      */
     public function index()
     {
-        // return OrderModel::AllOrder();
-        $Orders = OrderModel::all();
-        return response()->json(['success'=>true,'data'=>$Orders,'total'=>count($Orders)]);
+        $Orders = OrderModel::where('store_id', config_store_id)->get();
+        $data = array();
+        foreach($Orders as $order){
+            $data[] = array(
+                'order_id' => $order->order_id,
+                'invoice_prefix' => $order->invoice_prefix,
+                'store_name' => $order->store_name,
+                'payment_firstname' => $order->payment_firstname,
+                'payment_lastname' => $order->payment_lastname,
+                'email' => $order->email,
+                'telephone' => $order->telephone,
+                'status' => $order->OrderStatus->name
+            );
+        }
+        return response()->json(['success'=>true,'data'=>$data,'total'=>count($data)]);
     }
 
     /**
@@ -143,6 +156,23 @@ class SaleOrderController extends Controller
         OrderTotal::insert($data);
     }
 
+    public function createOrderPayment(Request $request){
+        $OrderPayment = OrderPayment::create([
+            'order_id' => $request['order_id'],
+            'currency_id' => $request['currency_id'],
+            'amount' => $request['amount'],
+            'payment_method' => $request['payment_method'],
+            'conversion_rate' => '0.00',
+            'transaction_id' => $request['transaction_id'],
+            'card_number' => '',
+            'card_brand' => '',
+            'card_expiration' => '',
+            'card_holder' => '',
+            'remark' => $request['remark'],
+            'date_add' => date('Y-m-d')
+        ]);
+        return response()->json(['success' => true,'message' => 'Payment has been created.']);
+    }
     /**
      * Display the specified resource.
      *
@@ -156,7 +186,9 @@ class SaleOrderController extends Controller
                     ->Join('shipping_courier as sc','o.shipping_courier_id','=','sc.shipping_courier_id')
                     ->Join('customer_group_description as cgd','o.customer_group_id','=','cgd.customer_group_id')
                     ->select('o.*','os.name as order_status','sc.shipping_courier_name as shipping_name','cgd.name as customer_group_name')
-                    ->where('order_id','=',$id)->first();
+                    ->where('order_id','=',$id)
+                    ->where('o.store_id', config_store_id)
+                    ->first();
         // dd($data);
         //$data=OrderModel::find($id);
 
@@ -180,9 +212,10 @@ class SaleOrderController extends Controller
      */
     public function edit($id)
     {
-        $data = OrderModel::find($id);
-        $data['products'] = OrderProduct::where('order_id',$id)->get();
-        $data['shipment'] = OrderModel::getCarrierBaseOrder($id);
+        $data = OrderModel::where('order_id',$id)->where('store_id', config_store_id)->get();
+        $data['products'] = OrderProduct::getProductBaseOrder($id, config_store_id);
+        $data['shipment'] = OrderModel::getCarrierBaseOrder($id, config_store_id);
+        $data['order_payment'] = OrderModel::getPaymentByOrder($id, config_store_id);
         return response()->json(['success' => true,'data' => $data]);
     }
 

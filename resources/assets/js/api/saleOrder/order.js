@@ -3,6 +3,20 @@ import config from '~/config/config'
 import Flash from '~/services/flash'
 var url = '/api/sale_order';
 
+export function createPaymentOrder(data){
+	return axios.post(url + '/create_order_payment', data)
+	.then(response => {
+		if(response.data.success==true){
+			Flash.setLoading(false)
+			return response['data'];
+		}else{
+			return response['data'];
+		}
+	})
+	.catch(e => {
+		this.errors.push(e)
+	})
+}
 // fetch data
 export function fetchList() {
 	return axios.get(url)

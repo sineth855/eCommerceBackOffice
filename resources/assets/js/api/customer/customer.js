@@ -4,6 +4,21 @@ import Flash from '~/services/flash'
 var url = '/api/customers';
 
 // fetch data
+export function fetchCustomerList() {
+	return axios.get(url)
+	.then(response => {
+		if(response.data.success==true){
+			Flash.setLoading(false)
+			return response['data'];
+		}else{
+			return response['data'];
+		}
+	})
+	.catch(e => {
+		this.errors.push(e)
+	})
+}
+// fetch data
 export function fetchList() {
 	return axios.get(url)
 	.then(response => {

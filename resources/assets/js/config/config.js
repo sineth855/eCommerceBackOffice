@@ -8,6 +8,11 @@ export function globalUrl() {
 	return url;
 }
 
+export function resellerUrl() {
+	const url = "http://localhost:8000";
+	return url;
+}
+
 // fetch data
 export function elastickUrl() {
 	const url = "http://localhost:9200";

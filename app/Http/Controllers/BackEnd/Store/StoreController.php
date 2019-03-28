@@ -18,7 +18,11 @@ class StoreController extends Controller
 
     public function index()
     {
-        $Store=Store::all();
+        if(config_store_id==1){
+            $Store=Store::all();
+        }else{
+            $Store=Store::where('store_id', config_store_id)->get();
+        }
         return response()->json(['success'=>true,'data'=>$Store,'total'=>count($Store)]);
     }
 

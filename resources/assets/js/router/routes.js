@@ -24,6 +24,12 @@ export default ({ authGuard, guestGuard }) => [
         { path: ':id', name: 'CategoryEdit', component: require('~/components/catalog/category/CategoryForm.vue'), props:true }
       ]
     },
+    // **** Profile ****
+    { path: '/profile', 
+      name: 'Profile', 
+      meta: { breadcrumb: true }, 
+      component: require('~/components/catalog/profile/Profile.vue')
+    },
     // Review
     { path: '/catalog/review', 
       name: 'catalog/review', 

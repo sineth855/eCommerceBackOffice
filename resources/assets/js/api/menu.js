@@ -148,7 +148,8 @@ const Menu =  [
       { name: 'Length Class', title: 'Length Class', component: 'Length Class' },
       { name: 'Weight Class', title: 'Weight Class', component: 'Weight Class' },
       { name: 'Tax Class', title: 'Tax Class', component: 'Tax Class' },      
-      { name: 'Tax Rate', title: 'Tax Rate', component: 'Tax Rate' }
+      { name: 'Tax Rate', title: 'Tax Rate', component: 'Tax Rate' },
+      { name: 'Profile', title: 'Account Profile', component: 'Profile' }
     ]
   },
 ];
